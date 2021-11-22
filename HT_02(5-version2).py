@@ -6,5 +6,5 @@
 
 d =  {'k1': 'geekhub', 'k2': [20, 4, 8], 'k3': [30, 10, 3], 'k4': [30, 20], 'k5': 'geekhub', 'k6': [30, 10,3]}
 d2 = {}
-[d2.update({k:v}) for k,v in d.items() if v not in d2.values()]
+[d2.update({i:j}) for i,j in d.items() if j not in d2.values()]
 print(d2)
