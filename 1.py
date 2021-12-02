@@ -7,7 +7,8 @@ class LoginException(Exception):
     def __init__(self, user_login):
         self.user_login = user_login
 def log_in(name, password, silent = False):
-    names = {'Vasya': 1234, 'Petya': 123, 'Kolya': 4321, 'Masha': 321, 'Lena': 231}
+    users = [('Vasya', '1234'), ('Petya', '123'), ('Kolya', '4321'), ('Masha', '321'), ('Lena', '231')]
+    names = dict(users)
     login = (name, password)
     try:
         if login in names.items():
