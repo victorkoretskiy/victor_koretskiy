@@ -12,7 +12,7 @@ def custom_range(start, stop = None, step = 1):
         print([]) 
     if step > 0 and start < stop:
         while start !=stop:
-            yield start + step
+            yield start-1 + step
             start += step
     if step < 0 and start > stop:
          while start !=stop:
