@@ -19,6 +19,6 @@ def custom_range(start, stop = None, step = 1):
             step = abs(step)
             yield start - step
             start -= step            
-for i in custom_range(20, 4, -2):
+for i in custom_range(2,10):
     print(i)
 
