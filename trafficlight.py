@@ -25,5 +25,5 @@ def trafficlight(cycle):
         yield cycle[i]
         i+=1
 for condition in trafficlight([('Red', 'Green'), ('Red', 'Green'), ('Red', 'Green'), ('Red', 'Green'), ('Yellow', 'Green'), ('Yellow', 'Green'), ('Green', 'Red'), ('Green', 'Red'), ('Green', 'Red'), ('Green', 'Red'), ('Yellow', 'Red'), ('Yellow', 'Red')]):
-    print(condition)
+    print(str(condition).replace("'",'').replace('(','').replace(')','').replace(',',''))
     time.sleep(1)
