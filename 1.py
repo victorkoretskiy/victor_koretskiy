@@ -1,5 +1,0 @@
-data = input('Enter the data through coma and space  ').split(', ')
-list_of_data = list(data)
-tuple_of_data = tuple(data)
-print('List : ',list_of_data)
-print('Tuple : ',tuple_of_data)
