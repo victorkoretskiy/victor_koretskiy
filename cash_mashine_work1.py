@@ -16,6 +16,7 @@ def sign_in():
     attempts = 3
     for i in range(attempts):
         try:
+            print('collector is Vasya, password: 123456')
             name = str(input('Enter username '))
             password = str(input('Enter password '))
             login = (name, password)
