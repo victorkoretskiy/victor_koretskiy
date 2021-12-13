@@ -122,8 +122,8 @@ def cash_machine(request):
                 if cell>=request and case[cell]>0:
                     stock.append(cell)
             print('Try amount which is multiple by ', stock[-1])
-        print(request)
-        print(case)
+#        print(request)
+#        print(case)
         return cash
 if func == '3':
     print(cash_machine(request))
