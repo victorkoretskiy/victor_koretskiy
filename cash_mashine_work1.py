@@ -3,6 +3,7 @@ class LoginException(Exception):
 class MenuException(Exception):
     pass
 import json
+import time
 def sign_in():
     with open('users.data', 'r') as f:
         users = []
@@ -69,7 +70,7 @@ def change_amount(name):
                 print('Enter the correct value')
             amount += fill
             with open(name+'_transactions.json', 'a') as f:
-                f.write(json.dumps('The amount was filled by  '+str(fill)))
+                f.write(json.dumps('The amount was filled by  '+str(fill)+'  '+str(time.ctime())))
             with open(name+'_balance.data', 'w') as f:
                 f.write(str(amount))
         except ValueError as err:
@@ -169,7 +170,10 @@ def take_cash(name):
                 init_amount = int((f.read()))
             amount = init_amount - sum(i*j for i,j in cash_final.items())
             with open(name+'_balance.data', 'w') as f:
-                f.write(str(amount))          
+                f.write(str(amount))
+            with open(name+'_transactions.json', 'a') as f:
+                f.write(json.dumps('Take out cash  '+str(sum(i*j for i,j in \
+                                cash_final.items()))+'  '+str(time.ctime())))
             with open('case.json', 'w') as f:
                 json.dump(case, f)
         return cash_final
