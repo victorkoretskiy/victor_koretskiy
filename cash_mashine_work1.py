@@ -145,7 +145,7 @@ def take_cash(name):
         """алгоритм выдачи налички"""
         case_init = case
         cash = {}
-        request1 = request
+        request_init = request
         if (request%100)%20 == 0 and case.get(10) == 0:
             case.pop(50)
         for cell in case:
@@ -157,7 +157,7 @@ def take_cash(name):
                 case[cell]-=request//cell
                 request = request%cell
         if request!=0:
-            print('Try another amount, recomended: ', request1 - request)
+            print('Try another amount, recomended: ', request_init - request)
         else:
             case_init = { k:int(case_init[k]) - int(cash[k]) for k in case_init if k in cash }
             cash_final = {}
